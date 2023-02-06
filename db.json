@@ -1,0 +1,102 @@
+{
+  "users": [
+    {
+      "fname": "Abhishek",
+      "lname": "Chougale",
+      "email": "abhi@gmail.com",
+      "mobile": "0259510401",
+      "password": "abhi@123",
+      "id": 17
+    },
+    {
+      "fname": "Rohan",
+      "lname": "Upase",
+      "email": "upaserohan@gmail.com",
+      "mobile": "09019858829",
+      "password": "612612612",
+      "id": 18
+    },
+    {
+      "fname": "Navin",
+      "lname": "Aiwale",
+      "email": "navin0401@gmail.com",
+      "mobile": "9019828462",
+      "password": "123456798",
+      "id": 19
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "fname": "Shree",
+      "lname": "U",
+      "email": "shreeda@gmail.com",
+      "mobile": "9019858829",
+      "salary": 591
+    },
+    {
+      "id": 2,
+      "fname": "Rohan",
+      "lname": "Upase",
+      "email": "upaserohan@gmail.com",
+      "mobile": "0019858829",
+      "salary": 101
+    },
+    {
+      "id": 3,
+      "fname": "Kasturi",
+      "lname": "Patil",
+      "email": "kasturi@gmail.com",
+      "mobile": "3247834222",
+      "salary": 61
+    },
+    {
+      "id": 4,
+      "fname": "Rohan",
+      "lname": "Upase",
+      "email": "upaserohan@gmail.com",
+      "mobile": "0901985882",
+      "salary": 23
+    },
+    {
+      "id": 5,
+      "fname": "Rohan",
+      "lname": "Upase",
+      "email": "upaserohan@gmail.com",
+      "mobile": "9019858829",
+      "salary": 11111
+    },
+    {
+      "id": 6,
+      "fname": "Prasad",
+      "lname": "Sankpal",
+      "email": "prasad@gmail.com",
+      "mobile": "9898989888",
+      "salary": 1111
+    },
+    {
+      "id": 7,
+      "fname": "R",
+      "lname": "G",
+      "email": "r@gmail.com",
+      "mobile": "3232323232",
+      "salary": 32
+    },
+    {
+      "id": 8,
+      "fname": "g",
+      "lname": "s",
+      "email": "s@gmail.com",
+      "mobile": "2121212121",
+      "salary": 21
+    },
+    {
+      "id": 9,
+      "fname": "Rohan",
+      "lname": "Malavi",
+      "email": "rohan@gmail.com",
+      "mobile": "2121212121",
+      "salary": 21
+    }
+  ]
+}

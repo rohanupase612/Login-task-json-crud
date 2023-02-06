@@ -1,0 +1,120 @@
+<div class=" row">
+  <div class="col-lg-6 text-center">
+    <button class="mb-3 mt-3 btn btn-primary">
+<a routerLink="/register" class="text-white">Add Another Account</a><br>
+</button>
+</div>
+<!-- <div class="col-lg-4 text-center">
+  <button class="mb-3 mt-3 btn btn-success">
+<a routerLink="/register" class="text-white">Register</a> 
+</button>
+</div> -->
+<div class="col-lg-6 text-center">
+  <button class="btn btn-danger mt-3 mb-3">
+<a (click)="logout()" style="cursor: pointer;" >Logout..?</a>
+</button>
+</div>
+</div>
+<div>
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1>Login Taskk</h1>
+    <div class="d-flex">
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+    </div>
+  </div>
+</nav>
+</div>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th>Employee Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email Id</th>
+      <th>Mobile Number</th>
+      <th>Salary</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employeeData;">
+    <td class="text-center">{{employee.id}}</td>
+    <td>{{employee.fname}}</td>
+    <td>{{employee.lname}}</td>
+    <td>{{employee.email}}</td>
+    <td>{{employee.mobile}}</td>
+    <td>{{employee.salary}}</td>
+    <td>
+      <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"  (click)="onEdit(employee)"><i class="fa fa-pencil fa-2x"></i></button>
+       <button class="btn btn-danger mx-3" (click)="deleteEmployee(employee)" ><i class="fa fa-trash-o fa-2x"></i></button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+
+          <form class="card-body cardbody-color" [formGroup]="formdata">
+            <div class="text-center">
+              <img src="../../assets/logo1.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                width="200px" alt="profile">
+            </div>
+            <div class="mb-3 row">
+              <div class="col-lg-6">
+                <input type="hidden" formControlName="id"/>
+              <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter First Name" formControlName="fname"
+              [ngClass]="{'red': formdata.controls.fname.invalid && formdata.controls.fname.touched}" />
+            <span *ngIf="formdata.controls.fname.invalid && formdata.controls.fname.touched">Please
+              Enter First Name</span>
+              </div>
+              <div class="col-lg-6">
+              <input type="text" class="form-control col-lg-6" aria-describedby="emailHelp" placeholder="Enter Last Name" formControlName="lname"
+              [ngClass]="{'red': formdata.controls.lname.invalid && formdata.controls.lname.touched}" />
+            <span *ngIf="formdata.controls.lname.invalid && formdata.controls.lname.touched">Please
+              Enter Last Name</span>
+            </div>
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="Username" aria-describedby="emailHelp" placeholder="Enter Email" formControlName="email"
+              [ngClass]="{'red':formdata.controls.email.invalid && formdata.controls.email.touched}" />
+            <span *ngIf="formdata.controls.email.invalid && formdata.controls.email.touched">Please
+              Enter Valid
+              Email</span>
+            </div>
+            <div class="mb-3">
+              <input type="tel" class="form-control" id="mobile" placeholder="Enter Mobile Number" formControlName="mobile"
+              [ngClass]="{'red': formdata.controls.mobile.invalid && formdata.controls.mobile.touched}" />
+            <span *ngIf="formdata.controls.mobile.invalid && formdata.controls.mobile.touched">Please Enter Mobile Number</span>
+            </div>
+            <div class="mb-3">
+              <input type="number" class="form-control" placeholder="Enter Salary" formControlName="salary"
+              [ngClass]="{'red': formdata.controls.salary.invalid && formdata.controls.mobile.touched}" />
+            <span *ngIf="formdata.controls.salary.invalid && formdata.controls.salary.touched">Please Enter Salary</span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal" (click)="refresh()">Close</button>
+              <button type="button" class="btn btn-primary" [disabled]="!formdata.valid" (click)="onSubmit(formdata.value)">Add</button>
+              <!-- <button type="button" class="btn btn-warning"[disabled]="!formdata.valid" (click)="updateEmployee()">Update</button> -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="mt-5">
+  <button class="btn btn-warning ">Admin Login</button>
+</footer>
